@@ -1,13 +1,20 @@
 <template>
   <div>
-    <div v-for="(job, key) in this.$store.state.jobs" :key="key">
+    <div v-for="(job, key) in fetchedJobs" :key="key">
       {{ job.title }}
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
+  computed: {
+    ...mapGetters([
+      'fetchedJobs'
+    ])
+  },
   created() {
     this.$store.dispatch('FETCH_JOBS')
   }

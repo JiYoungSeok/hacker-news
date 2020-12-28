@@ -10,6 +10,17 @@ export const store = new Vuex.Store({
     ask: [],
     jobs: []
   },
+  getters: {
+    fetchedNews(state) {
+      return state.news
+    },
+    fetchedAsk(state) {
+      return state.ask
+    },
+    fetchedJobs(state) {
+      return state.jobs
+    }
+  },
   // State 에 기록
   mutations: {
     SET_NEWS(state, news) {
