@@ -2,8 +2,8 @@
   <div>
     <user-profile>
       <div slot="username">{{ fetchedUser.id }}</div>
-      <template slot="time">{{ fetchedUser.created }}</template>
-      <div slot="karma">{{ fetchedUser.karma }}</div>
+      <span slot="time">{{ `Joined ${fetchedUser.created}` }}, </span>
+      <span slot="karma">{{ fetchedUser.karma }}</span>
     </user-profile>
   </div>
 </template>
