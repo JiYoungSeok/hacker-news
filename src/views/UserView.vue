@@ -1,15 +1,21 @@
 <template>
   <div>
-    <p>name : {{ fetchedUser.id }}</p>
-    <p>karma : {{ fetchedUser.karma }}</p>
-    <p>created: {{ fetchedUser.created }}</p>
+    <user-profile>
+      <div slot="username">{{ fetchedUser.id }}</div>
+      <template slot="time">{{ fetchedUser.created }}</template>
+      <div slot="karma">{{ fetchedUser.karma }}</div>
+    </user-profile>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import UserProfile from '@/components/UserProfile.vue'
 
 export default {
+  components: {
+    UserProfile
+  },
   computed: {
     ...mapGetters([
       'fetchedUser'
