@@ -34,19 +34,7 @@ export default {
       return this.$route.name
     },
     listItems() {
-      switch (this.name) {
-        case 'news':
-        return this.$store.state.news
-
-        case 'ask':
-      return this.$store.state.ask
-
-        case 'jobs':
-        return this.$store.state.jobs
-
-        default:
-        return []
-      }
+      return this.$store.state.list
     }
   }
 }
