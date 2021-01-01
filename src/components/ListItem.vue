@@ -48,25 +48,6 @@ export default {
         return []
       }
     }
-  },
-  created() {
-    let actionName
-
-    switch (this.name) {
-      case 'news':
-      actionName = 'FETCH_NEWS'
-      break
-
-      case 'ask':
-      actionName = 'FETCH_ASK'
-      break
-
-      case 'jobs':
-      actionName = 'FETCH_JOBS'
-      break
-    }
-
-    this.$store.dispatch(actionName)
   }
 }
 </script>
